@@ -25,7 +25,7 @@ export async function fetchAssets(
     if (index >= 0) {
       // To avoid wasting bandwidth, we will wait for a few time before downloading from the fallback URL.
       try {
-        await waitWithAbort(200 + (index + 1) * 400, controller.signal);
+        await waitWithAbort(1800 + (index + 1) * 1200, controller.signal);
       } catch {
         console.log(picocolors.gray('[fetch cancelled early]'), picocolors.gray(url));
         throw reusedCustomAbortError;
